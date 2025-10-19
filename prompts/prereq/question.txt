@@ -1,0 +1,10 @@
+You are performing the task: {goal}
+
+Is the following step strictly required before another?
+
+Prerequisite candidate: {step_b}
+Target step: {step_a}
+
+Answer "Yes" if the target step cannot be completed correctly without first completing the prerequisite step. Otherwise, answer "No".
+
+Answer:

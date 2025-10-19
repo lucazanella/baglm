@@ -1,0 +1,7 @@
+You are watching a video segment of someone attempting to {goal}.
+What is the main action being performed in this exact moment?
+
+Options:
+{choices}
+
+Answer with only the letter label of the correct option (e.g., A, B, ..., Z, AA, AB, etc.), with no extra text.

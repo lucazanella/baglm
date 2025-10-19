@@ -1,0 +1,12 @@
+You are watching a short video clip.
+
+The goal of the person in the video is: {goal}
+The specific action of interest is: {step}
+
+Rate how far along this action is in terms of execution progress, using a scale from 0 to 9:
+- 0 = the action is not present in this clip
+- 1 = the action is just beginning or about to begin
+- 5 = the action is halfway complete
+- 9 = the action is just finishing or about to finish
+
+Respond with a single number from 0 to 9. Do not include any other text.

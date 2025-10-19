@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "t2v_metrics"
+version = "1.0.0"
+requires-python = ">=3.10"
+
+[tool.setuptools]
+packages = ["t2v_metrics", "t2v_metrics.models"]
+include-package-data = true
