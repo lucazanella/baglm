@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriately as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Training-free Online Video Step Grounding accepted to NeurIPS 2025.">
+  <meta property="og:title" content="Training-free Online Video Step Grounding" />
+  <meta property="og:description" content="Learn more about BaGLM, accepted to NeurIPS 2025." />
+  <meta property="og:url" content="https://lucazanella.github.io/baglm/" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/teaser.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="Training-free Online Video Step Grounding accepted to NeurIPS 2025.">
+  <meta name="twitter:description" content="Training-free Online Video Step Grounding">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/teaser.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Video step grounding, training-free, large multimodal models, NeurIPS 2025">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Luca Zanella, Massimiliano Mancini, Yiming Wang, Alessio Tonioni, Elisa Ricci">
+
+
+  <title>Training-free Online Video Step Grounding</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <!-- <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
+
+</head>
+
+<body>
+
+  <style>
+    .author-block {
+      margin-right: 10px;
+      /* Adjust the value as per your preference */
+    }
+  </style>
+
+  <style>
+    /* Custom CSS for tooltip */
+    .custom-tooltip .tooltip-inner {
+      background-color: #f1f1f1;
+      color: #333333;
+    }
+
+    .custom-tooltip .tooltip.bs-tooltip-top .arrow::before {
+      border-top-color: #f1f1f1;
+    }
+
+    .subtitle {
+      margin-top: 20px; 
+      /* max-width: 1000px; */
+      line-height: 1.5;
+      color: #222;
+      font-size: 1.2rem;
+    }
+
+    .videos-overlay-container {
+      position: relative;
+    }
+
+    .description-overlay {
+      text-align: center;
+      margin-bottom: 10px;  /* Push text above the videos */
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: black;
+    }
+
+    .videos-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;  /* Space between videos */
+    }
+
+    .video-wrapper {
+      width: 30%;  /* Make videos uniform in width */
+      height: 200px;  /* Fixed height to enforce cropping */
+      overflow: hidden;  /* Hide overflowing parts for cropping effect */
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;  /* Crop video uniformly */
+      border-radius: 8px;
+    }
+
+    #results-carousel {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .item img {
+      width: 80%; 
+      height: auto; 
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+  </style>
+
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <!-- <h1 class="title is-1 publication-title"><b style="font-size: 64px;">BaGLM</b></h1> -->
+            <h1 class="title is-1 publication-title">Training-free Online Video Step Grounding</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://lucazanella.github.io/" target="_blank">Luca Zanella</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://mancinimassimiliano.github.io/" target="_blank">Massimiliano Mancini</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.yimingwang.it/" target="_blank">Yiming Wang</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://alessiotonioni.github.io/" target="_blank">Alessio Tonioni</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://eliricci.eu/" target="_blank">Elisa Ricci</a><sup>1,2</sup>
+              </span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block" style="margin-left: 10px;"><sup>1</sup> University of Trento</span>
+              <span class="author-block" style="margin-left: 10px;"><sup>2</sup> Fondazione Bruno Kessler</span>
+              <span class="author-block" style="margin-left: 10px;"><sup>3</sup> Google</span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block" style="margin-left: 10px;">NeurIPS 2025</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <!-- <div class="publication-links"> -->
+                   <!-- Arxiv PDF link -->
+                <!-- <span class="link-block">
+                  <a href="" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+
+            <!-- Github link -->
+            <span class="link-block">
+              <a href="https://github.com/lucazanella/baglm" target="_blank"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>Code</span>
+            </a>
+
+            <!-- ArXiv abstract Link -->
+            <!-- <span class="link-block">
+              <a href="https://arxiv.org/abs/???" target="_blank"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="ai ai-arxiv"></i>
+              </span>
+              <span>arXiv</span>
+            </a>
+          </span> -->
+
+          <div style="display: flex; justify-content: center; margin-top: 20px;">
+            <img src="static/images/teaser.png"
+                 alt="Banner Image"
+                 style="width: 75%; height: auto; border-radius: 8px;">
+          </div>
+          <h2 class="subtitle has-text-justified">  
+            <strong>Video Step Grounding</strong> (VSG) aims to identify which procedural 
+            steps appear in a video. We tackle this task with BaGLM, a 
+            <em>training-free</em> approach that combines Bayesian filtering with Large 
+            Multimodal Models to enable <em>online</em> inference over video streams.
+          </h2>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Given a task and a set of steps composing it, Video Step Grounding (VSG) aims 
+              to detect which steps are performed in a video. Standard approaches for this 
+              task require a labeled training set (<em>e.g.</em>, with step-level annotations or 
+              narrations), which may be costly to collect. Moreover, they process the full 
+              video offline, limiting their applications for scenarios requiring online 
+              decisions. Thus, in this work, we explore how to perform VSG <em>online</em> and 
+              <em>without training</em>. We achieve this by exploiting the zero-shot capabilities of recent 
+              Large Multimodal Models (LMMs). In particular, we use LMMs to predict the step 
+              associated with a restricted set of frames, without access to the whole video. 
+              We show that this online strategy without task-specific tuning outperforms 
+              offline and training-based models. Motivated by this finding, we develop 
+              Bayesian Grounding with Large Multimodal Models (BaGLM), further injecting 
+              knowledge of past frames into the LMM-based predictions. BaGLM exploits 
+              Bayesian filtering principles, modeling step transitions via (i) a dependency 
+              matrix extracted through large language models and (ii) an estimation of step 
+              progress. Experiments on three datasets show superior performance of BaGLM over 
+              state-of-the-art training-based offline methods.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+  <section class="section teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="title is-3">Large Multimodal Models are strong baselines for VSG</h2>
+        <div style="display: flex; justify-content: center;">
+          <img src="static/images/preliminary.png" alt="Banner Image" height="100%" width="100%">
+        </div>
+        <h2 class="subtitle has-text-justified">
+          Off-the-shelf Large Multimodal Models (LMMs) achieve competitive or superior 
+          performance compared to state-of-the-art training-based methods on Video Step 
+          Grounding (VSG) benchmarks. We evaluate them by framing VSG as a multi-choice 
+          question answering problem: given a video segment and a list of candidate 
+          steps, the model must identify which step (if any) is being performed. For each 
+          segment, the LMM is prompted with task and step descriptions, producing 
+          probabilities across all step options and a none class.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Method overview-->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h2 class="title is-3">Method overview</h2>
+        <img src="static/images/method.png" alt="Banner Image" height="100%">
+        <h2 class="subtitle has-text-justified">
+          <p>While LMMs are effective 
+            at Video Step Grounding, they act without memory of past knowledge, performing 
+            step prediction by only looking at the current segment. Therefore, uncertain 
+            predictions (<em>e.g.</em>, due to the segment acquisition) cannot benefit from 
+            past evidence (<em>e.g.</em>, step performed in the previous segment), leading 
+            to potential mistakes. To address this limitation, we introduce <em>Bayesian 
+            Grounding with Large Multimodal Models</em> (<em>BaGLM</em>), a Bayesian 
+            filtering framework that integrates step dependencies and progress estimates 
+            into LMM-based predictions. Specifically, we use a Large Language Model (LLM) 
+            to estimate a dependency matrix among procedural steps, which defines step 
+            transition probabilities for the <strong>predict</strong> step of a Bayesian 
+            filter. As the video progresses, these transitions are updated using steps' 
+            progress estimates from the LMM. The <strong>update</strong> step of the filter 
+            then merges this with the predictions from the LMM, refining the output.</p>
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End method overview -->
+
+  <!-- Image carousel -->
+  <section class="section teaser">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Qualitative Results</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          
+          <figure class="item">
+            <img src="static/images/qualitatives_htstep.png"
+                 alt="Qualitative results of BaGLM and an off-the-shelf LMM on an HT-Step video, showing ground truth and predicted step probabilities.">
+            <figcaption class="subtitle has-text-centered">
+              Qualitative results of BaGLM on a test video from HT-Step (<em>Make Milanesa</em>). 
+              Ground truth step boundaries and predicted step probabilities per segment are 
+              shown for both BaGLM and the off-the-shelf LMM. Arrows point to timestamps of 
+              selected keyframes.
+            </figcaption>
+          </figure>
+  
+          <figure class="item">
+            <img src="static/images/qualitatives_crosstask.png"
+                 alt="Qualitative results of BaGLM and an off-the-shelf LMM on a CrossTask video, showing ground truth and predicted step probabilities.">
+            <figcaption class="subtitle has-text-centered">
+              Qualitative results of BaGLM on a test video from CrossTask (<em>Make a Latte</em>). 
+              Ground truth step boundaries and predicted step probabilities per segment are 
+              shown for both BaGLM and the off-the-shelf LMM. Arrows point to timestamps of 
+              selected keyframes.
+            </figcaption>
+          </figure>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End image carousel -->
+
+  <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a>.
+              <!-- You are free to borrow the code of this website, we just ask that you link back to this page in the footer. -->
+              <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- Statcounter tracking code -->
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
