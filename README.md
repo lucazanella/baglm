@@ -6,13 +6,13 @@
 
 [Luca Zanella](https://lucazanella.github.io/), [Massimiliano Mancini](https://mancinimassimiliano.github.io/), [Yiming Wang](https://www.yimingwang.it/), [Alessio Tonioni](https://alessiotonioni.github.io/), [Elisa Ricci](https://eliricci.eu/) <br>
 
-<!-- [![Paper](https://img.shields.io/badge/paper-NeurIPS%202025-005A9C.svg)]()
-[![Website](https://img.shields.io/badge/website-BaGLM-4285F4.svg)]() -->
+[![Paper](https://img.shields.io/badge/paper-arxiv.2510.16989-B31B1B.svg)](https://arxiv.org/abs/2510.16989)
+[![Website](https://img.shields.io/badge/website-BaGLM-4285F4.svg)](https://lucazanella.github.io/baglm/)
 
 </div>
 
 <p align="center">
-  <img style="width: 75%" src="media/method.png">
+  <img style="width: 100%" src="media/method.png">
 </p>
 <br>
 
